@@ -3,6 +3,7 @@
 namespace Modules\KnowledgeBaseApiModule\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
 
 class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
 {
@@ -18,9 +19,51 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Router $router)
     {
+        $this->registerViews();
+        $this->registerMiddleware($router);
         $this->hooks();
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
+    /**
+     * Register views.
+     *
+     * @return void
+     */
+    protected function registerViews()
+    {
+        $viewPath = resource_path('views/modules/knowledgebaseapimodule');
+
+        $sourcePath = __DIR__.'/../Resources/views';
+
+        $this->publishes([
+            $sourcePath => $viewPath
+        ],'views');
+
+        $this->loadViewsFrom(array_merge(array_map(function ($path) {
+            return $path . '/modules/knowledgebaseapimodule';
+        }, \Config::get('view.paths')), [$sourcePath]), 'knowledgebase-api-module');
+    }
+
+    /**
+     * Register the middleware.
+     *
+     * @param \Illuminate\Routing\Router $router
+     */
+    protected function registerMiddleware(Router $router)
+    {
+        $router->aliasMiddleware('knowledgebase.api.token', \Modules\KnowledgeBaseApiModule\Http\Middleware\ApiTokenMiddleware::class);
     }
 
     /**
@@ -28,7 +71,39 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
      */
     public function hooks()
     {
+        // Replace the existing menu action with correct filters
+        
+        // Add item to settings sections
+        \Eventy::addFilter('settings.sections', function ($sections) {
+            $sections['knowledge-base-api'] = [
+                'title' => __('Knowledge Base API'),
+                'icon' => 'book', // You can change the icon as needed
+                'order' => 150,
+                'active' => \Request::is('*app-settings/knowledge-base-api*')
+            ];
+            return $sections;
+        }, 15);
 
+        // Settings view name
+        \Eventy::addFilter('settings.view', function ($view, $section) {
+            if ($section !== 'knowledge-base-api') {
+                return $view;
+            }
+            return 'knowledgebase-api-module::settings';
+        }, 20, 2);
+        
+        // Ensure settings javascript/css are loaded
+        \Eventy::addFilter('settings.section_settings', function ($settings, $section) {
+            if ($section !== 'knowledge-base-api') {
+                return $settings;
+            }
+            
+            // Include any js/css files if needed
+            // $settings['js'] = asset('modules/knowledgebase-api-module/js/settings.js');
+            // $settings['css'] = asset('modules/knowledgebase-api-module/css/settings.css');
+            
+            return $settings;
+        }, 20, 2);
     }
 
     /**
