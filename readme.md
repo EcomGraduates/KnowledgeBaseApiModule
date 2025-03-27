@@ -12,6 +12,11 @@ This module adds the option to add a public API for the [FreeScout](https://free
 3. Unpack the zip file.
 4. Remove the zip file.
 5. Activate the module via the Modules page in FreeScout.
+6. Go to settings and access the Knowledge Base API menu option
+7. Enter a custom token or generate a new one. Then press save
+
+![image](https://github.com/user-attachments/assets/71f73062-7dec-4998-827b-256e05799778)
+![image](https://github.com/user-attachments/assets/91bc46e9-99e2-4771-8d60-5057ad3090e8)
 
 ## Update instructions
 
