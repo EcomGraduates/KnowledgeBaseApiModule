@@ -21,6 +21,9 @@ This module adds the option to add a public API for the [FreeScout](https://free
 4. Unpack the zip file.
 5. Remove the zip file.
 
+## Credits
+This module was originally created by [jtorvald](https://github.com/jtorvald/) and has been extended with additional features by EcomGraduates. The original repository can be found at: https://github.com/jtorvald/freescout-knowledge-api
+
 ## Contributing
 
 Feel free to add your own features by sending a pull request.
@@ -42,6 +45,14 @@ curl "https://example.com/api/knowledgebase/1/categories/1?locale=en" \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
 ```
+## Changelog
+
+### 1.0.2
+- Updated by EcomGraduates to add access token features
+
+### 1.0.1
+- Initial release with REST API functionality (no token authentication)
+
 ## LICENSE
 
 MIT
