@@ -31,7 +31,7 @@ Feel free to add your own features by sending a pull request.
 ## Get knowledge base categories in a mailbox
 
 ```
-curl "https://example.com/api/knowledgebase/1/categories?locale=en" \
+curl "https://example.com/api/knowledgebase/1/categories?locale=en&token=YOUR_TOKEN" \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json; charset=utf-8' \
 -d $'{}'
@@ -40,7 +40,7 @@ curl "https://example.com/api/knowledgebase/1/categories?locale=en" \
 ## Get articles in a category
 
 ```
-curl "https://example.com/api/knowledgebase/1/categories/1?locale=en" \
+curl "https://example.com/api/knowledgebase/1/categories/1?locale=en&token=YOUR_TOKEN" \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json; charset=utf-8' \
      -d $'{}'
