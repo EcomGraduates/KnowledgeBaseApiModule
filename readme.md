@@ -15,9 +15,6 @@ This module adds a public API for the [FreeScout](https://freescout.net) knowled
 6. Go to settings and access the Knowledge Base API menu option
 7. Enter a custom token or generate a new one. Then press save
 
-![image](https://github.com/user-attachments/assets/71f73062-7dec-4998-827b-256e05799778)
-![image](https://github.com/user-attachments/assets/91bc46e9-99e2-4771-8d60-5057ad3090e8)
-
 ## Update instructions
 
 1. Download the latest module zip file via the releases card on the right.
@@ -136,6 +133,26 @@ curl -X GET "https://example.com/api/knowledgebase/1/export?token=YOUR_TOKEN" \
      -H 'Accept: application/json' \
      -H 'Content-Type: application/json; charset=utf-8'
 ```
+
+#Screenshots
+
+##Robust api with the ability to test the responses!
+![image](https://github.com/user-attachments/assets/12766225-0362-46ee-a40c-c177304e6114)
+
+##Full analytics for understanding what your customers care most about!
+<img width="2525" alt="image" src="https://github.com/user-attachments/assets/24a17b87-853f-4d0c-918a-14de0c84e259" />
+<img width="2525" alt="image" src="https://github.com/user-attachments/assets/fcaa7d25-3044-44fc-8444-ff51ac9163dc" />
+<img width="2525" alt="image" src="https://github.com/user-attachments/assets/3cf9f8d4-4c31-470c-81c2-f3394d1d53c0" />
+<img width="2525" alt="image" src="https://github.com/user-attachments/assets/b6cedbc6-d36a-4554-8cb7-717fb6f311dd" />
+
+##Identify what's missing from your documentation so you can better serve your customers
+<img width="2525" alt="image" src="https://github.com/user-attachments/assets/bb3574c4-7fff-4a4e-8cde-431960cb75d4" />
+
+
+
+
+
+
 
 ## Credits
 This module was originally created by [jtorvald](https://github.com/jtorvald/) and has been extended with additional features by EcomGraduates. The original repository can be found at: https://github.com/jtorvald/freescout-knowledge-api
