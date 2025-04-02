@@ -16,3 +16,18 @@
 if (!app()->routesAreCached()) {
     require __DIR__ . '/Http/routes.php';
 }
+
+/*
+|--------------------------------------------------------------------------
+| Register Migrations
+|--------------------------------------------------------------------------
+|
+| Register module migrations so they can be run when migrations are executed.
+|
+*/
+
+$migrations_path = __DIR__.'/Database/Migrations';
+
+if (is_dir($migrations_path)) {
+    $this->loadMigrationsFrom($migrations_path);
+}

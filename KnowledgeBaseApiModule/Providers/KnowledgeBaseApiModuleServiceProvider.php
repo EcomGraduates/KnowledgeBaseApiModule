@@ -81,24 +81,37 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
                 'order' => 150,
                 'active' => \Request::is('*app-settings/knowledge-base-api*')
             ];
+            
+            // Add KB Analytics section
+            $sections['kb-analytics'] = [
+                'title' => __('KB Analytics'),
+                'icon' => 'signal',
+                'order' => 151,
+                'active' => \Request::is('*app-settings/kb-analytics*')
+            ];
+            
             return $sections;
         }, 15);
 
         // Settings view name
         \Eventy::addFilter('settings.view', function ($view, $section) {
-            if ($section !== 'knowledge-base-api') {
-                return $view;
+            if ($section === 'knowledge-base-api') {
+                return 'knowledgebase-api-module::settings';
             }
-            return 'knowledgebase-api-module::settings';
+            
+            if ($section === 'kb-analytics') {
+                return 'knowledgebase-api-module::analytics';
+            }
+            
+            return $view;
         }, 20, 2);
         
         // Ensure settings javascript/css are loaded
         \Eventy::addFilter('settings.section_settings', function ($settings, $section) {
-            if ($section !== 'knowledge-base-api') {
+            if ($section !== 'knowledge-base-api' && $section !== 'kb-analytics') {
                 return $settings;
             }
             
-            // Include any js/css files if needed
             // $settings['js'] = asset('modules/knowledgebase-api-module/js/settings.js');
             // $settings['css'] = asset('modules/knowledgebase-api-module/css/settings.css');
             
