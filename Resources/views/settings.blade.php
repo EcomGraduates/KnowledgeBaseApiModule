@@ -6,7 +6,7 @@
 <div class="section-heading">
     {{ __('Knowledge Base API Settings') }}
     <span class="section-heading-right">
-        <a href="{{ route('knowledgebase-api-module.analytics') }}" class="btn btn-primary btn-sm">
+        <a href="{{ route('knowledgebaseapimodule.analytics') }}" class="btn btn-primary btn-sm">
             <i class="glyphicon glyphicon-stats"></i> {{ __('View Analytics') }}
         </a>
     </span>
@@ -20,7 +20,7 @@
                     <h3 class="panel-title"><i class="glyphicon glyphicon-key"></i> {{ __('API Authentication') }}</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('knowledgebase-api-module.settings.save') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('knowledgebaseapimodule.settings.save') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('api_token') ? ' has-error' : '' }}">

@@ -82,7 +82,7 @@
                     <h3 class="panel-title">{{ __('Filter Analytics') }}</h3>
                 </div>
                 <div class="panel-body">
-                    <form method="GET" action="{{ route('knowledgebase-api-module.analytics') }}" class="form-inline">
+                    <form method="GET" action="{{ route('knowledgebaseapimodule.analytics') }}" class="form-inline">
                         <div class="form-group margin-right-10">
                             <label for="mailbox_id" class="margin-right-5">{{ __('Mailbox') }}:</label>
                             <select name="mailbox_id" id="mailbox_id" class="form-control">

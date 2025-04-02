@@ -1,9 +1,9 @@
 {
-  "name": "Knowledge Base API",
-  "alias": "knowledgebase-api-module",
+  "name": "KnowledgeBaseApiModule",
+  "alias": "knowledgebaseapimodule",
   "description": "Module for creating a rest api for the knowledge base Module, with analytics, custom url support, and a testing interface.",
   "version": "2.0.0",
-  "detailsUrl": "https://github.com/EcomGraduates/freescout-knowledge-api",
+  "detailsUrl": "https://github.com/EcomGraduates/KnowledgeBaseApiModule",
   "author": "EcomGraduates, based on work by jtorvald",
   "authorUrl": "https://github.com/EcomGraduates",
   "requiredAppVersion": "1.8",
@@ -17,7 +17,7 @@
     "custom",
     "url"
   ],
-  "img": "https://raw.githubusercontent.com/EcomGraduates/KnowledgeBaseApiModule/refs/heads/main/KnowledgeBaseApiModule/Public/images/module.svg",
+  "img": "https://raw.githubusercontent.com/EcomGraduates/KnowledgeBaseApiModule/refs/heads/main/Public/images/module.svg",
   "active": 0,
   "order": 0,
   "providers": [
@@ -28,6 +28,6 @@
     "start.php"
   ],
   "requires": [],
-  "latestVersionUrl": "https://raw.githubusercontent.com/EcomGraduates/freescout-knowledge-api/refs/heads/main/KnowledgeBaseApiModule/module.json",
-  "latestVersionZipUrl": "https://github.com/EcomGraduates/freescout-knowledge-api/releases/download/v2.0.0/KnowledgeBaseApiModule-2.0.0.zip"
+  "latestVersionUrl": "https://raw.githubusercontent.com/EcomGraduates/KnowledgeBaseApiModule/refs/heads/main/module.json",
+  "latestVersionZipUrl": "https://github.com/EcomGraduates/KnowledgeBaseApiModule/archive/refs/heads/main.zip"
 }

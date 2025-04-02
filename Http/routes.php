@@ -2,14 +2,14 @@
 
 // Settings routes (admin only)
 Route::group(['middleware' => ['web', 'auth', 'roles'], 'roles' => ['admin'], 'prefix' => \Helper::getSubdirectory(), 'namespace' => 'Modules\KnowledgeBaseApiModule\Http\Controllers'], function () {
-    Route::get('/app-settings/knowledge-base-api', ['uses' => 'SettingsController@index'])->name('knowledgebase-api-module.settings');
-    Route::post('/app-settings/knowledge-base-api', ['uses' => 'SettingsController@save'])->name('knowledgebase-api-module.settings.save');
+    Route::get('/app-settings/knowledge-base-api', ['uses' => 'SettingsController@index'])->name('knowledgebaseapimodule.settings');
+    Route::post('/app-settings/knowledge-base-api', ['uses' => 'SettingsController@save'])->name('knowledgebaseapimodule.settings.save');
     
     // Direct access route for debugging
-    Route::get('/kb-api-settings', ['uses' => 'SettingsController@index'])->name('knowledgebase-api-module.direct-settings');
+    Route::get('/kb-api-settings', ['uses' => 'SettingsController@index'])->name('knowledgebaseapimodule.direct-settings');
     
     // Analytics dashboard
-    Route::get('/app-settings/kb-analytics', ['uses' => 'AnalyticsController@index'])->name('knowledgebase-api-module.analytics');
+    Route::get('/app-settings/kb-analytics', ['uses' => 'AnalyticsController@index'])->name('knowledgebaseapimodule.analytics');
 });
 
 // API routes (protected by token middleware)

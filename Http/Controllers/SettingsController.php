@@ -30,7 +30,7 @@ class SettingsController extends Controller
         $custom_url_template = Option::get('knowledgebase_api_custom_url');
         $client_url_template = Option::get('knowledgebase_api_client_url');
         
-        return view('knowledgebase-api-module::settings', [
+        return view('knowledgebaseapimodule::settings', [
             'api_token' => $api_token,
             'custom_url_template' => $custom_url_template,
             'client_url_template' => $client_url_template,
@@ -57,6 +57,6 @@ class SettingsController extends Controller
         
         \Session::flash('flash_success_floating', __('Settings saved'));
         
-        return redirect()->route('knowledgebase-api-module.settings');
+        return redirect()->route('knowledgebaseapimodule.settings');
     }
 } 

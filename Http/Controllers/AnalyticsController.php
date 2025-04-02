@@ -53,7 +53,7 @@ class AnalyticsController extends Controller
         // Get searches with no results
         $zeroResultSearches = $this->getZeroResultSearches($mailboxId, $limit, $period);
         
-        return \View::make('knowledgebase-api-module::analytics', [
+        return \View::make('knowledgebaseapimodule::analytics', [
             'mailboxes' => $mailboxes,
             'current_mailbox_id' => $mailboxId,
             'current_period' => $period,

@@ -53,7 +53,7 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/knowledgebaseapimodule';
-        }, \Config::get('view.paths')), [$sourcePath]), 'knowledgebase-api-module');
+        }, \Config::get('view.paths')), [$sourcePath]), 'knowledgebaseapimodule');
     }
 
     /**
@@ -96,11 +96,11 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
         // Settings view name
         \Eventy::addFilter('settings.view', function ($view, $section) {
             if ($section === 'knowledge-base-api') {
-                return 'knowledgebase-api-module::settings';
+                return 'knowledgebaseapimodule::settings';
             }
             
             if ($section === 'kb-analytics') {
-                return 'knowledgebase-api-module::analytics';
+                return 'knowledgebaseapimodule::analytics';
             }
             
             return $view;
@@ -112,8 +112,8 @@ class KnowledgeBaseApiModuleServiceProvider extends ServiceProvider
                 return $settings;
             }
             
-            // $settings['js'] = asset('modules/knowledgebase-api-module/js/settings.js');
-            // $settings['css'] = asset('modules/knowledgebase-api-module/css/settings.css');
+            // $settings['js'] = asset('modules/knowledgebaseapimodule/js/settings.js');
+            // $settings['css'] = asset('modules/knowledgebaseapimodule/css/settings.css');
             
             return $settings;
         }, 20, 2);
