@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="section-heading">
-    {{ __('Knowledge Base API Settings') }}
+    {{ __('Knowledge Base API Settings') }} <span class="badge badge-info">v2.0.1</span>
     <span class="section-heading-right">
         <a href="{{ route('knowledgebaseapimodule.analytics') }}" class="btn btn-primary btn-sm">
             <i class="glyphicon glyphicon-stats"></i> {{ __('View Analytics') }}

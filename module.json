@@ -2,7 +2,7 @@
   "name": "KnowledgeBaseApiModule",
   "alias": "knowledgebaseapimodule",
   "description": "Module for creating a rest api for the knowledge base Module, with analytics, custom url support, and a testing interface.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "detailsUrl": "https://github.com/EcomGraduates/KnowledgeBaseApiModule",
   "author": "EcomGraduates, based on work by jtorvald",
   "authorUrl": "https://github.com/EcomGraduates",
