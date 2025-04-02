@@ -30,10 +30,15 @@ class SettingsController extends Controller
         $custom_url_template = Option::get('knowledgebase_api_custom_url');
         $client_url_template = Option::get('knowledgebase_api_client_url');
         
+        // Read module version from module.json
+        $module_info = json_decode(file_get_contents(base_path('Modules/KnowledgeBaseApiModule/module.json')), true);
+        $module_version = isset($module_info['version']) ? $module_info['version'] : '1.0.0';
+        
         return view('knowledgebaseapimodule::settings', [
             'api_token' => $api_token,
             'custom_url_template' => $custom_url_template,
             'client_url_template' => $client_url_template,
+            'module_version' => $module_version,
         ]);
     }
     

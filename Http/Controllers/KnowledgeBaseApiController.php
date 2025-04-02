@@ -183,11 +183,14 @@ class KnowledgeBaseApiController extends Controller
 
             $locale = $request->input('locale') ?? \Kb::defaultLocale($mailbox);
             
-            // Search in published articles only
+            // Convert keyword to lowercase for case-insensitive search
+            $keyword = mb_strtolower($keyword);
+            
+            // Search in published articles only, using case-insensitive search
             $articles = KbArticle::where('mailbox_id', $mailbox->id)
                 ->where(function($query) use ($keyword) {
-                    $query->where('title', 'LIKE', '%'.$keyword.'%')
-                          ->orWhere('text', 'LIKE', '%'.$keyword.'%');
+                    $query->whereRaw('LOWER(title) LIKE ?', ['%'.$keyword.'%'])
+                          ->orWhereRaw('LOWER(text) LIKE ?', ['%'.$keyword.'%']);
                 })
                 ->where('status', KbArticle::STATUS_PUBLISHED)
                 ->get();
